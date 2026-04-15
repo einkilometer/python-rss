@@ -1,59 +1,7 @@
-# python-rss
-über gemma4:31b newsreader
+über gemma4:31b  newsreader
 
-optional:
+optional:  mkdir  venv  python3 -m venv .venv  source .venv/bin/activate
 
-  mkdir venv
+install: pip3 install flask feedparser requests beautifulsoup4 python3 -m pip install --upgrade pip pip freeze > requirements.txt
 
-  python3 -m venv .venv
-  
-  source .venv/bin/activate
-
-install:
-
-  pip3 install flask feedparser requests beautifulsoup4
-
-  python3 -m pip install --upgrade pip
-  
-  pip freeze > requirements.txt
-
-
-requirements:
-
-  beautifulsoup4==4.14.3
-  
-  blinker==1.9.0
-  
-  certifi==2026.2.25
-  
-  charset-normalizer==3.4.7
-  
-  click==8.1.8
-  
-  feedparser==6.0.12
-  
-  Flask==3.1.3
-  
-  idna==3.11
-  
-  importlib_metadata==8.7.1
-  
-  itsdangerous==2.2.0
-  
-  Jinja2==3.1.6
-  
-  MarkupSafe==3.0.3
-  
-  requests==2.32.5
-  
-  sgmllib3k==1.0.0
-  
-  soupsieve==2.8.3
-  
-  typing_extensions==4.15.0
-  
-  urllib3==2.6.3
-  
-  Werkzeug==3.1.8
-  
-  zipp==3.23.1
+requirements: beautifulsoup4==4.14.3 blinker==1.9.0 certifi==2026.2.25 charset-normalizer==3.4.7 click==8.1.8 feedparser==6.0.12 Flask==3.1.3 idna==3.11 importlib_metadata==8.7.1 itsdangerous==2.2.0 Jinja2==3.1.6 MarkupSafe==3.0.3 requests==2.32.5 sgmllib3k==1.0.0 soupsieve==2.8.3 typing_extensions==4.15.0 urllib3==2.6.3 Werkzeug==3.1.8 zipp==3.23.1
