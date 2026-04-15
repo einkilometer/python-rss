@@ -1,6 +1,6 @@
 README.md
 ```
- über gemma4:31b  newsreader
+ gemma4:31b coded newsreader
 ```
 optional:
 ```
