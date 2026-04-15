@@ -56,7 +56,7 @@ def init_db():
         conn.execute('''CREATE TABLE IF NOT EXISTS articles
                         (id INTEGER PRIMARY KEY AUTOINCREMENT, feed_id INTEGER,
                          title TEXT, link TEXT, pub_date TEXT, content TEXT,
-                         FOREIGN KEY(feed_id) REFERENCES feeds(id))''') 
+                         FOREIGN KEY(feed_id) REFERENCES feeds(id))''')
         conn.commit()
 
 def add_feed(url):
@@ -79,7 +79,7 @@ def scrape_article_content(url):
             noise.decompose()
 
         url_map = {}
-        ref_order = [] 
+        ref_order = []
         for tag in soup.find_all(['a', 'img']):
             link = tag.get('href') or tag.get('src')
             if link:
@@ -144,11 +144,11 @@ def sync_feed(feed_id):
             if existing:
                 conn.execute("UPDATE articles SET title = ?, pub_date = ? WHERE id = ?", (title, date, existing['id']))
             else:
-                conn.execute("INSERT INTO articles (feed_id, title, link, pub_date, content) VALUES (?, ?, ?, ?, ?)", 
+                conn.execute("INSERT INTO articles (feed_id, title, link, pub_date, content) VALUES (?, ?, ?, ?, ?)",
                              (feed_id, title, link, date, None))
         if online_links:
             placeholders = ','.join(['?'] * len(online_links))
-            conn.execute(f"DELETE FROM articles WHERE feed_id = ? AND link NOT IN ({placeholders})", 
+            conn.execute(f"DELETE FROM articles WHERE feed_id = ? AND link NOT IN ({placeholders})",
                          (feed_id, *online_links))
         conn.commit()
     finally:
@@ -307,8 +307,10 @@ MAN_PAGE_TEMPLATE = """
     <title>{{ article.title }}(1)</title>
     <style>
         body { font-family: "Courier New", Courier, monospace; background: #000000; color: #ffffff; padding: 50px; line-height: 1.4; max-width: 900px; margin: auto; }
-        .man-header { text-align: center; font-weight: bold; margin-bottom: 20px; text-transform: uppercase; }
+        .man-header { text-align: left; font-weight: bold; margin-bottom: 20px; text-transform: uppercase; }
         .section-title { font-weight: bold; text-transform: uppercase; margin-top: 25px;  display: block; border-bottom: 1px solid #ccc; }
+        .section-title2 { text-transform: uppercase; margin-top: 25px;  display: block; border-bottom: 1px solid #ccc; }
+        .section-date { font-weight: bold; text-transform: uppercase; text-align: center; margin-top: 25px;  display: block; border-bottom: 1px solid #ccc; }
         .content { white-space: pre-wrap; margin-top: 10px; text-align: left; }
         .ref-link { color: #031; text-decoration: underline dotted #333; cursor: pointer; transition: color 0.2s; }
         .ref-link:hover { color: #00ff00 !important; background: #333; text-decoration: underline solid #00ff00; }
@@ -322,12 +324,10 @@ MAN_PAGE_TEMPLATE = """
     </style>
 </head>
 <body>
-    <div class="man-header">
-        {{ article.title | upper }}<br>
-    </div>
-    <div class="content">Extracted content from {{ article.pub_date }}</div>
-    <span class="section-title">SYNOPSIS</span>
-    <div class="content">URL: {{ article.link }}</div>
+    <span class="section-title2">{{ article.pub_date }}</span>
+    <div class="man-header">{{ article.title | upper }}</div>
+    <span class="section-title">SOURCE</span>
+    <div class="content">{{ article.link }}</div>
     <span class="section-title">DESCRIPTION</span>
     <div class="content">{{ article.content | safe }}</div>
     <span class="section-title">SOURCE_METADATA</span>
