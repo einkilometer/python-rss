@@ -388,7 +388,7 @@ def delete_feed(feed_id):
         conn.commit()
     return redirect(url_for('index'))
 
-@app.route('')
+@app.route('/progress')
 def progress():
     return jsonify(progress_tracker)
 
