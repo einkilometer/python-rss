@@ -1,4 +1,4 @@
-#README.md
+README.md
 <br>&nbsp;&nbsp;&nbsp; über gemma4:31b  newsreader
 
 optional:
