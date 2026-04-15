@@ -176,7 +176,7 @@ INDEX_TEMPLATE = """
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Newsraft Sources</title>
+    <title>RSS Sources</title>
     <style>
         body { font-family: monospace; max-width: 850px; margin: auto; padding: 20px; background: #1a1a1a; color: #00ff00; }
         a { color: #00ff00; text-decoration: none; }
@@ -208,7 +208,7 @@ INDEX_TEMPLATE = """
     </script>
 </head>
 <body onload="checkProgress()">
-    <h1>NEWSRAFT_SOURCES(1)</h1>
+    <h1>RSS_SOURCES</h1>
     {% with messages = get_flashed_messages() %}
       {% if messages %}
         {% for msg in messages %}<div class="flash">{{ msg }}</div>{% endfor %}
@@ -323,12 +323,10 @@ MAN_PAGE_TEMPLATE = """
 </head>
 <body>
     <div class="man-header">
-        {{ article.title | upper }}(1)<br>
-        NEWSRAFT_EXTRACT_MODULE(1)<br>
-        USER COMMANDS MANUAL PAGE
+        {{ article.title | upper }}<br>
     </div>
-    <span class="section-title">NAME</span>
-    <div class="content">{{ article.title }} - Extracted content from {{ article.pub_date }}</div>
+    <span class="section-title">DATE</span>
+    <div class="content">Extracted content from {{ article.pub_date }}</div>
     <span class="section-title">SYNOPSIS</span>
     <div class="content">URL: {{ article.link }}</div>
     <span class="section-title">DESCRIPTION</span>
