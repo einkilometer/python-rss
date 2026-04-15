@@ -1,6 +1,10 @@
 über gemma4:31b  newsreader
 
-optional: > mkdir > venv > python3 -m venv .venv > source .venv/bin/activate
+*optional:
+*mkdir
+*venv
+*python3 -m venv .venv
+*source .venv/bin/activate
 
 install: pip3 install flask feedparser requests beautifulsoup4 python3 -m pip install --upgrade pip pip freeze > requirements.txt
 
