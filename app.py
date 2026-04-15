@@ -325,7 +325,6 @@ MAN_PAGE_TEMPLATE = """
     <div class="man-header">
         {{ article.title | upper }}<br>
     </div>
-    <span class="section-title">DATE</span>
     <div class="content">Extracted content from {{ article.pub_date }}</div>
     <span class="section-title">SYNOPSIS</span>
     <div class="content">URL: {{ article.link }}</div>
@@ -389,7 +388,7 @@ def delete_feed(feed_id):
         conn.commit()
     return redirect(url_for('index'))
 
-@app.route('/progress')
+@app.route('')
 def progress():
     return jsonify(progress_tracker)
 
