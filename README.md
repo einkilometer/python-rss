@@ -1,6 +1,6 @@
 README.md
 ```
- gemma4:31b coded newsreader
+A with support of gemma4:31b chat coded newsreader
 ```
 optional:
 ```
