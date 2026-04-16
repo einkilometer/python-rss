@@ -10,15 +10,16 @@ optional:
  source .venv/bin/activate
 ```
 
-install: 
+install requirements: 
 ```
- echo requirements:
-  pip3 install flask feedparser requests beautifulsoup4
-
- echo execution:
-  python3 -m pip install --upgrade pip 
+ pip3 install flask feedparser requests beautifulsoup4
+ curl https://raw.githubusercontent.com/einkilometer/python-rss/refs/heads/main/app.py >app.py 
 ```
-
+execution:
+```
+ python3 -m pip install --upgrade pip
+```
+  
 system info: 
 ```
  pip freeze > requirements.txt
