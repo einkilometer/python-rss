@@ -1,6 +1,6 @@
 README.md
 ```
-A with support of gemma4:31b chat coded newsreader
+ a newsreader as a result of an idea and a chat with gemma4:31b
 ```
 optional:
 ```
@@ -12,30 +12,32 @@ optional:
 
 install: 
 ```
- pip3 install flask feedparser requests beautifulsoup4 
- python3 -m pip install --upgrade pip 
- pip freeze > requirements.txt
+ echo requirements:
+  pip3 install flask feedparser requests beautifulsoup4 
+ echo execution:
+  python3 -m pip install --upgrade pip 
 ```
 
-requirements: 
+system info: 
 ```
- beautifulsoup4==4.14.3
- blinker==1.9.0
- certifi==2026.2.25
- charset-normalizer==3.4.7
- click==8.1.8
- feedparser==6.0.12
- Flask==3.1.3
- idna==3.11
- importlib_metadata==8.7.1
- itsdangerous==2.2.0
- Jinja2==3.1.6
- MarkupSafe==3.0.3
- requests==2.32.5
- sgmllib3k==1.0.0
- soupsieve==2.8.3
- typing_extensions==4.15.0
- urllib3==2.6.3
- Werkzeug==3.1.8
- zipp==3.23.1
+ pip freeze > requirements.txt
+  beautifulsoup4==4.14.3
+  blinker==1.9.0
+  certifi==2026.2.25
+  charset-normalizer==3.4.7
+  click==8.1.8
+  feedparser==6.0.12
+  Flask==3.1.3
+  idna==3.11
+  importlib_metadata==8.7.1
+  itsdangerous==2.2.0
+  Jinja2==3.1.6
+  MarkupSafe==3.0.3
+  requests==2.32.5
+  sgmllib3k==1.0.0
+  soupsieve==2.8.3
+  typing_extensions==4.15.0
+  urllib3==2.6.3
+  Werkzeug==3.1.8
+  zipp==3.23.1
 ```
