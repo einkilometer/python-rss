@@ -13,7 +13,8 @@ optional:
 install: 
 ```
  echo requirements:
-  pip3 install flask feedparser requests beautifulsoup4 
+  pip3 install flask feedparser requests beautifulsoup4
+
  echo execution:
   python3 -m pip install --upgrade pip 
 ```
